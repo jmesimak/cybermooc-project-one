@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block body %}
+<h1>Add your own recipe</h1>
+
+<form action="/recipe" method="post" enctype="multipart/form-data">
+  <label for="title">Title</label>
+  <br>
+  <input type="text" name="title">
+  <br>
+  <label for"content">Content (you can also use HTML to format your recipe!)</label>
+  <br>
+  <textarea name="content"></textarea>
+  <br>
+  <input type="file" name="file">
+  <button type="submit">Submit</button>
+</form>
+{% endblock %}

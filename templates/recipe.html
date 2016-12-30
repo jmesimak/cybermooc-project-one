@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block body %}
+<h1>{{ recipe[2] }}</h1>
+
+<pre>{{ recipe[3] | safe }}</pre>
+
+<h2>It should look like this</h2>
+<img src="/static/images/{{ recipe[4] }}" style="max-width: 500px; max-height: 500px;"></img>
+
+<h2>Comments</h2>
+
+{% if user != None and user[4] %}
+<hr>
+<h2>Admin commands</h2>
+<form action="/recipe/{{recipe[0]}}" method="delete">
+  <button type="submit" class="btn btn-warning">Delete recipe</button>
+</form>
+{% endif %}
+
+{% endblock %}

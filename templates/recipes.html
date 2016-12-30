@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<h1>All recipes</h1>
+<ul>
+{% for recipe in recipes %}
+<li><a href="/recipe/{{ recipe[0] }}">{{ recipe[2] }}</a></li>
+{% endfor %}
+</ul>
+{% endblock %}

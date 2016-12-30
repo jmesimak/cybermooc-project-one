@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<h1>Search</h1>
+
+<form action="/recipe/search" method="get">
+  <input type="text" name="keyword">
+  <button type="submit">Submit</button>
+</form>
+{% endblock %}
