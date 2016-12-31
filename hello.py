@@ -13,7 +13,8 @@ logged_in_users = {}
 @app.before_request
 def check_token():
     if request.headers.get('Cookie'):
-        token = request.headers.get('Cookie').split('=')[1]
+
+        token = request.cookies['auth-token']
 
         if token in logged_in_users.keys():
             g._user = logged_in_users[token]
